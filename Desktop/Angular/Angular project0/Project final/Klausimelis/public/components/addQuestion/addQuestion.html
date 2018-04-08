@@ -1,0 +1,58 @@
+<div>
+<div layout="column" layout-align="center center">
+<form ng-submit="saved()" style="margin-top:78px;">
+    
+    <div class="form-group">
+    <label for="comment">Įveskite klausimą:</label>
+      <textarea class="form-control" rows="5" ng-model="question.ques" id="comment"></textarea>
+    </div>
+    
+
+      <div ng-if="question.questionType == 'radioBox'">
+
+        <input type="radio"  ng-model="question.rightAnswer" value="op1">
+          <md-input-container> <input type="text" class="form-control" ng-model="question.op1" placeholder="Pasirinkimas 1"></md-input-container>
+        <input type="radio"  ng-model="question.rightAnswer" value="op2"> 
+       <md-input-container> <input type="text" name="" class="form-control" ng-model="question.op2" placeholder="Pasirinkimas 2"></md-input-container>
+        <input type="radio" ng-model="question.rightAnswer"  value="op3">  
+        <md-input-container><input type="text" name="" ng-model="question.op3" class="form-control" placeholder="Pasirinkimas 3"></md-input-container>
+        <input type="radio" ng-model="question.rightAnswer" value="op4"> 
+        <md-input-container><input type="text" name="" ng-model="question.op4" class="form-control" placeholder="Pasirinkimas 4"></md-input-container>
+       <br/>
+      
+      </div>
+      <div ng-if="question.questionType== 'checkBox'">
+        <input type="checkbox" checklist-model="question.rightAnswer" value="op1">
+        <md-input-container><input type="text" name="" ng-model="question.op1" placeholder="Pasirinkimas 1"></md-input-container>
+        <input type="checkbox" checklist-model="question.rightAnswer" value="op2"> 
+        <md-input-container><input type="text" name="" ng-model="question.op2" placeholder="Pasirinkimas 2"></md-input-container>
+        <input type="checkbox" checklist-model="question.rightAnswer" value="op3">  
+      <md-input-container>  <input type="text" name="" ng-model="question.op3" placeholder="Pasirinkimas 3"></md-input-container>
+        <input type="checkbox" checklist-model="question.rightAnswer" value="op4"> 
+       <md-input-container> <input type="text" name="" ng-model="question.op4" placeholder="Pasirinkimas 4"></md-input-container>
+       <br/>
+      </div>
+            
+      <md-select ng-model="question.questionType" placeholder="Testo atsakymų žymėjimas">
+            <md-option value="checkBox">
+                  Keletas teisingų atsakymų
+           </md-option>
+              <md-option value="radioBox">
+                   Vienas teisingas atsakymas
+       </md-option>
+
+       </md-select>
+       <!--<input type="text" ng-model="question.questionType" placeholder="question type">-->
+       
+       <label>Testo tema: </label>
+       
+       <input type="radio" ng-model="question.quizName" value="HTML5" >HTML5
+       <input type="radio" ng-model="question.quizName" value="CSS3">CSS 3
+       <input type="radio" ng-model="question.quizName" value="JavaScript"> JavaScript
+       
+        <md-button class="md-raised md-primary" type="submit" value="saved Quiz" ng-disabled="!question.quizName||!question.rightAnswer">Išsaugoti</md-button>
+        {{data}}
+        
+    </form>
+</div>
+</div>

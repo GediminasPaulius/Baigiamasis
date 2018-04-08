@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quizApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Klausimėlis su Juru Jankevičiumi TM</title>
+    <meta charset="utf-8">
+
+
+   
+    <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet">
+
+        <!--Including boot strap CDN-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!--Closing boot strap CDN-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+       <link href="./stylesheet/style.css" rel="stylesheet">
+
+
+
+    <script src="./node_modules/angular/angular.js"></script>
+    <script src="./node_modules/angular-animate/angular-animate.js"></script>
+    <script src="./node_modules/angular-aria/angular-aria.js"></script>
+    <script src="./node_modules/angular-material/angular-material.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./node_modules/checklist-model/checklist-model.js"></script>
+
+
+
+
+
+    <script src="./script/config.js"></script>
+
+
+    <script src="./components/home/home.js"></script>
+    <script src="./components/login/login.js"></script>
+    <script src="./components/signup/signup.js"></script>
+    <script src="./components/addQuestion/addQuestion.js"></script>
+    <script src="./components/getQuestion/getquestion.js"></script>
+    <script src="./components/dashboard/dash.js"></script>
+    <script src="./components/userprofile/userprofile.js"></script>
+
+
+
+    
+    
+</head>
+<body ng-controller="quizCtrl">
+    
+        <!-- Navbar  ================================================== -->
+</br>
+    <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Testų aplikacija</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a ui-sref="getquestion">Testai</a></li>
+                        <li><a ui-sref="dashboard">Admino laukas</a></li>
+
+
+
+                    </ul>
+                    <div ng-show="!isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ui-sref="signin">Prisijungti</md-button>
+                    </div>
+                     <div ng-show="isLogin">
+                      <md-button class="md-raised  pull-right myBtn" ng-click="signOut()">Atsijungti</md-button>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+</div>
+    
+    
+    
+    <ui-view></ui-view>
+    
+              
+</body>
+
+ <div class="container marketing"> 
+           <hr class="featurette-divider">
+
+
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+       <footer>
+          <div layout='row' layout-align="start end">
+            <p>{{myDate | date: 'yyyy-MM-dd'}}</p>
+          </div>
+        </footer>
+
+    </div>
+</html>

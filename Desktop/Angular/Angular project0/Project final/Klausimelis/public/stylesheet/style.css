@@ -1,0 +1,60 @@
+
+ @keyframes slidy {
+
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+body { margin: 0; } 
+.slider { overflow: hidden;}
+.slider figure img { width: 20%; float: left; }
+.slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite; 
+}
+.myBtn{
+    position: relative;
+    margin-right: 30px;
+}
+.md-toolbar-tools > .md-button:last-child {
+    margin-right: 0px;
+    margin-top: 58px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
+
+.signUpCard{
+    top: 77px;
+    width: 770px;
+}
+.img-responsive{
+    max-width: 93%;
+    height: auto;
+    margin-top: 37px;
+    
+    margin-left: 77px;
+}
+
+.question-btn-float-left{
+    float: right;
+}
+.quiz-last{
+ margin-top: 300px;   
+}
